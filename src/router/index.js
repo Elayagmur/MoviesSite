@@ -1,30 +1,31 @@
-import { createRouter, createWebHistory } from 'vue-router';
-
-import HomeComponent from '../views/home/Home.vue';
-import AboutComponent from '../views/about/About.vue';
-import DetailComponent from '../views/detail/Detail.vue';
-import ChatComponent from '../views/chat/Chat.vue';
-
+import { createRouter, createWebHistory } from 'vue-router'
+import Home from '../views/home/Home.vue';
+import MovieDetail from '../views/detail/MovieDetail.vue';
+import Contact from '../views/contact/Contact.vue';
+import About from '../views/about/About.vue';
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: HomeComponent
-  }, {
+    component: Home
+  },
+  {
+    path: '/movie/:id',
+    name: 'MovieDetail',
+    component: MovieDetail
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact
+  },
+  {
     path: '/about',
     name: 'About',
-    component: AboutComponent
-  }, {
-    path: '/detail',
-    name: 'Detail',
-    component: DetailComponent
-  }, {
-    path: '/chat',
-    name: 'Chat',
-    component: ChatComponent
+    component: About
   }
-];
-
+]
+;
 const router = createRouter({
   history: createWebHistory(),
   routes
